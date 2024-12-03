@@ -38,7 +38,7 @@ mongoose
     console.log(err);
   });
 
-app.post("/", async (req, res) => {
+app.post("/api/users", async (req, res) => {
   try {
     const { name, email, number } = req.body;
     const user = new User({ name, email, number });
@@ -49,7 +49,7 @@ app.post("/", async (req, res) => {
   }
 });
 
-app.get("/", async (req, res) => {
+app.get("/api/users", async (req, res) => {
   try {
     const users = await User.find().lean();
     res.status(200).json(users);
