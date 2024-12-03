@@ -53,7 +53,7 @@ app.post("/api/users", async (req, res) => {
 
 app.get("/api/users", async (req, res) => {
   try {
-    const users = await User.find();
+    const users = await User.find().lean();
     res.status(200).json(users);
   } catch (err) {
     res
