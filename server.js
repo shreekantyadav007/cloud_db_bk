@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
-app.use(cors({ origin: 'https://cloud-db-bk.vercel.app/' }));
+app.use(cors({ origin: 'http://localhost:5173' }));
 
 const userSchema = new mongoose.Schema(
   {
