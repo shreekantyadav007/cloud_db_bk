@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-const allowedOrigins = ['http://localhost:5173', 'https://your-frontend-domain.com'];
+const allowedOrigins = ['http://localhost:5173', 'https://golden-conkies-6a21c4.netlify.app/'];
 
 app.use(cors({
   origin: (origin, callback) => {
