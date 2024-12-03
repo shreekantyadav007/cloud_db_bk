@@ -6,11 +6,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-const allowedOrigins = ['http://localhost:5173', 'https://golden-conkies-6a21c4.netlify.app/'];
+const allowedOrigins = [
+  'http://localhost:3000', // Local development
+  'https://golden-conkies-6a21c4.netlify.app', // Production frontend
+];
 
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
+    if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
